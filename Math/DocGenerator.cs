@@ -29,12 +29,14 @@ namespace Math
 					XWPFRun r1 = p1.CreateRun();
 					r1.SetText(line);
 					r1.SetTextPosition(10);
-					r1.SetFontFamily("Arial", FontCharRange.Ascii);
+					r1.SetFontFamily("Arial", FontCharRange.HAnsi);
+                    r1.FontSize = 18;
+                
 					line = string.Empty;
 				}
 				if (i != 60)
 				{
-					line = line + this._equations[i].Print() + "                                                         ";
+					line = line + this._equations[i].Print() + "                  ";
 				}
 				else
 				{
@@ -42,11 +44,12 @@ namespace Math
 					XWPFRun r1 = p1.CreateRun();
 					r1.SetText(line);
 					r1.SetTextPosition(10);
-					r1.SetFontFamily("Arial", FontCharRange.Ascii);
+					r1.SetFontFamily("Arial", FontCharRange.HAnsi);
+                    r1.FontSize = 18;
 				}
 			}
 			string fileName = DateTime.Now.ToShortDateString().Replace("/", "_");
-			string fullPath = string.Format("c:\\{0}.docx", fileName);
+			string fullPath = string.Format("c:\\test\\{0}.docx", fileName);
 			FileStream out1 = new FileStream(fullPath, FileMode.Create);
 			this._doc.Write(out1);
 			out1.Close();

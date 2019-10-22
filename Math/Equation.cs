@@ -38,7 +38,7 @@
 		{
 			get
 			{
-				return "+";
+				return "＋";
 			}
 		}
 
@@ -70,7 +70,7 @@
 		{
 			get
 			{
-				return "-";
+				return "－";
 			}
 		}
 
