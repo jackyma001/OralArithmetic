@@ -1,6 +1,6 @@
 ﻿namespace Math
 {
-	partial class Form1
+	partial class FormMath
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -30,7 +30,6 @@
 		{
 			this.txtTotal = new System.Windows.Forms.TextBox();
 			this.label1 = new System.Windows.Forms.Label();
-			this.txtMultipl = new System.Windows.Forms.TextBox();
 			this.label2 = new System.Windows.Forms.Label();
 			this.btnOk = new System.Windows.Forms.Button();
 			this.SuspendLayout();
@@ -52,13 +51,6 @@
 			this.label1.TabIndex = 1;
 			this.label1.Text = "题目数";
 			// 
-			// txtMultipl
-			// 
-			this.txtMultipl.Location = new System.Drawing.Point(62, 71);
-			this.txtMultipl.Name = "txtMultipl";
-			this.txtMultipl.Size = new System.Drawing.Size(100, 20);
-			this.txtMultipl.TabIndex = 0;
-			// 
 			// label2
 			// 
 			this.label2.AutoSize = true;
@@ -70,7 +62,7 @@
 			// 
 			// btnOk
 			// 
-			this.btnOk.Location = new System.Drawing.Point(62, 125);
+			this.btnOk.Location = new System.Drawing.Point(62, 73);
 			this.btnOk.Name = "btnOk";
 			this.btnOk.Size = new System.Drawing.Size(100, 27);
 			this.btnOk.TabIndex = 2;
@@ -82,14 +74,12 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(257, 194);
+			this.ClientSize = new System.Drawing.Size(228, 146);
 			this.Controls.Add(this.btnOk);
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.label1);
-			this.Controls.Add(this.txtMultipl);
 			this.Controls.Add(this.txtTotal);
 			this.Name = "Form1";
-			this.Text = "Form1";
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -99,7 +89,6 @@
 
 		private System.Windows.Forms.TextBox txtTotal;
 		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.TextBox txtMultipl;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Button btnOk;
 	}

@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Math
+﻿namespace Math
 {
 
 	public enum Operator
@@ -10,9 +8,13 @@ namespace Math
 		Mul,
 		Divde
 	}
+
 	public abstract class Equation
 	{
-		protected Random _r = new Random();
+		protected const string Formater = "{0}{1}{2}=";
+		/// <summary>
+		/// Initializes a new instance of the <see cref="Equation"/> class.
+		/// </summary>
 		public Equation()
 		{
 		}
@@ -24,7 +26,10 @@ namespace Math
 
 		public abstract string Print();
 
-
+		public override bool Equals(object obj)
+		{
+			return base.Equals(obj);
+		}
 	}
 
 	public class PlusEquation : Equation
@@ -39,7 +44,7 @@ namespace Math
 
 		public override string Print()
 		{
-			return string.Format("{0}{1}{2}=", MyRandom.Next(20, 900), this.Operator, MyRandom.Next(20, 99));
+			return string.Format(Equation.Formater, MyRandom.Next(20, 900), this.Operator, MyRandom.Next(20, 99));
 		}
 	}
 
@@ -55,8 +60,7 @@ namespace Math
 
 		public override string Print()
 		{
-			this._r = new Random();
-			return string.Format("{0}{1}{2}=", MyRandom.Next(10, 100), this.Operator, MyRandom.Next(2, 10));
+			return string.Format(Equation.Formater, MyRandom.Next(10, 100), this.Operator, MyRandom.Next(2, 10));
 		}
 	}
 
@@ -72,7 +76,6 @@ namespace Math
 
 		public override string Print()
 		{
-			this._r = new Random();
 			int a = MyRandom.Next(20, 1000);
 			int b = MyRandom.Next(4, 100);
 			while (a <= b)
@@ -80,7 +83,7 @@ namespace Math
 				a = MyRandom.Next(20, 1000);
 				b = MyRandom.Next(4, 100);
 			}
-			return string.Format("{0}{1}{2}=", a, this.Operator, b);
+			return string.Format(Equation.Formater, a, this.Operator, b);
 		}
 	}
 
@@ -103,7 +106,7 @@ namespace Math
 				a = MyRandom.Next(22, 1000);
 				b = MyRandom.Next(2, 10);
 			}
-			return string.Format("{0}{1}{2}=", a, this.Operator, b);
+			return string.Format(Equation.Formater, a, this.Operator, b);
 		}
 	}
 }
