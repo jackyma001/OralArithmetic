@@ -24,7 +24,20 @@
 			get;
 		}
 
-		public abstract string Print();
+        public int Item1
+        {
+            get;set;
+        }
+
+        public int Item2
+        {
+            get;set;
+        }
+		public string Print()
+        {
+            return string.Format(Equation.Formater, this.Item1, this.Operator, this.Item2);
+        }
+            
 
 		public override bool Equals(object obj)
 		{
@@ -34,6 +47,12 @@
 
 	public class PlusEquation : Equation
 	{
+        public PlusEquation()
+        {
+            this.Item1 = MyRandom.Next(20, 900);
+            this.Item2 = MyRandom.Next(20, 99);
+        }
+
 		public override string Operator
 		{
 			get
@@ -41,15 +60,15 @@
 				return "＋";
 			}
 		}
-
-		public override string Print()
-		{
-			return string.Format(Equation.Formater, MyRandom.Next(20, 900), this.Operator, MyRandom.Next(20, 99));
-		}
 	}
 
 	public class MultiplayEquation : Equation
 	{
+        public MultiplayEquation()
+        {
+            this.Item1 = MyRandom.Next(10,100);
+            this.Item2 = MyRandom.Next(2, 10);
+        }
 		public override string Operator
 		{
 			get
@@ -57,56 +76,51 @@
 				return "×";
 			}
 		}
-
-		public override string Print()
-		{
-			return string.Format(Equation.Formater, MyRandom.Next(10, 100), this.Operator, MyRandom.Next(2, 10));
-		}
 	}
 
 	public class SubEquation : Equation
 	{
-		public override string Operator
+        public SubEquation()
+        {
+            this.Item1 = MyRandom.Next(20, 1000);
+            this.Item2 = MyRandom.Next(4, 100);
+            while (this.Item1 <= this.Item2)
+            {
+                this.Item1 = MyRandom.Next(20, 1000);
+                this.Item2 = MyRandom.Next(4, 100);
+            }
+        }
+
+        public override string Operator
 		{
 			get
 			{
 				return "－";
 			}
 		}
-
-		public override string Print()
-		{
-			int a = MyRandom.Next(20, 1000);
-			int b = MyRandom.Next(4, 100);
-			while (a <= b)
-			{
-				a = MyRandom.Next(20, 1000);
-				b = MyRandom.Next(4, 100);
-			}
-			return string.Format(Equation.Formater, a, this.Operator, b);
-		}
 	}
 
 	public class DivdeEquation : Equation
 	{
-		public override string Operator
+        public DivdeEquation()
+        {
+            int a = MyRandom.Next(22, 1000);
+            int b = MyRandom.Next(2, 10);
+            while (a % b != 0 || a / b < 10)
+            {
+                a = MyRandom.Next(22, 1000);
+                b = MyRandom.Next(2, 10);
+            }
+            this.Item1 = a;
+            this.Item2 = b;
+        }
+
+        public override string Operator
 		{
 			get
 			{
 				return "÷";
 			}
-		}
-
-		public override string Print()
-		{
-			int a = MyRandom.Next(22, 1000);
-			int b = MyRandom.Next(2, 10);
-			while (a % b != 0 || a / b < 10)
-			{
-				a = MyRandom.Next(22, 1000);
-				b = MyRandom.Next(2, 10);
-			}
-			return string.Format(Equation.Formater, a, this.Operator, b);
 		}
 	}
 }

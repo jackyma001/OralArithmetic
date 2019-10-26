@@ -14,33 +14,8 @@ namespace Math
 
 		private void btnOk_Click(object sender, EventArgs e)
 		{
-			List<Equation> equations = new List<Equation>();
-			for (int i = 0; i < 15; i++)
-			{
-                Equation equation = new PlusEquation();
-                if(!equations.Contains(equation))
-                {
-                    equations.Add(equation);
-                }
-                equation = new MultiplayEquation();
-                if (!equations.Contains(equation))
-                {
-                    equations.Add(equation);
-                }
-
-                equation = new SubEquation();
-                if (!equations.Contains(equation))
-                {
-                    equations.Add(equation);
-                }
-                equation = new DivdeEquation();
-                if (!equations.Contains(equation))
-                {
-                    equations.Add(equation);
-                }
-			}
-
-			DocGenerator docGenerator = new DocGenerator(equations.OrderBy(x => x.Operator).ToList());
+            EquationFactory factory = new EquationFactory(15, 15, 15, 15);
+            DocGenerator docGenerator = new DocGenerator(factory.Equations);
 			docGenerator.Run();
 		}
 	}

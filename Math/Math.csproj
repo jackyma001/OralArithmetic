@@ -63,6 +63,7 @@
   <ItemGroup>
     <Compile Include="DocGenerator.cs" />
     <Compile Include="Equation.cs" />
+    <Compile Include="EquationFactory.cs" />
     <Compile Include="FormMath.cs">
       <SubType>Form</SubType>
     </Compile>
