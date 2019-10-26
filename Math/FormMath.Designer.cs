@@ -32,6 +32,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnOk = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.txtShushi = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // txtTotal
@@ -63,22 +65,43 @@
             // 
             // btnOk
             // 
-            this.btnOk.Location = new System.Drawing.Point(62, 67);
+            this.btnOk.Location = new System.Drawing.Point(14, 136);
             this.btnOk.Name = "btnOk";
-            this.btnOk.Size = new System.Drawing.Size(100, 25);
+            this.btnOk.Size = new System.Drawing.Size(159, 63);
             this.btnOk.TabIndex = 1;
-            this.btnOk.Text = "生成";
+            this.btnOk.Text = "生成口算";
             this.btnOk.UseVisualStyleBackColor = true;
             this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(188, 136);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(158, 63);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "笔算竖式";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // txtShushi
+            // 
+            this.txtShushi.AcceptsReturn = true;
+            this.txtShushi.Location = new System.Drawing.Point(208, 28);
+            this.txtShushi.Name = "txtShushi";
+            this.txtShushi.Size = new System.Drawing.Size(100, 21);
+            this.txtShushi.TabIndex = 2;
+            this.txtShushi.Text = "35";
             // 
             // FormMath
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(228, 135);
+            this.ClientSize = new System.Drawing.Size(366, 259);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnOk);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtShushi);
             this.Controls.Add(this.txtTotal);
             this.Name = "FormMath";
             this.ResumeLayout(false);
@@ -92,6 +115,8 @@
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Button btnOk;
-	}
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txtShushi;
+    }
 }
 

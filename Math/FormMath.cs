@@ -16,7 +16,14 @@ namespace Math
 		{
             EquationFactory factory = new EquationFactory(15, 15, 15, 15);
             DocGenerator docGenerator = new DocGenerator(factory.Equations);
-			docGenerator.Run();
+			docGenerator.Run(0);
 		}
-	}
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            EquationFactory factory = new EquationFactory(int.Parse(txtShushi.Text));
+            DocGenerator docGenerator = new DocGenerator(factory.Equations);
+            docGenerator.Run(3);
+        }
+    }
 }

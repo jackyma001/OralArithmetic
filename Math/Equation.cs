@@ -78,7 +78,23 @@
 		}
 	}
 
-	public class SubEquation : Equation
+    public class MultiplayEquationWith3m2 : Equation
+    {
+        public MultiplayEquationWith3m2()
+        {
+            this.Item1 = MyRandom.Next(101, 999);
+            this.Item2 = MyRandom.Next(11, 99);
+        }
+        public override string Operator
+        {
+            get
+            {
+                return "×";
+            }
+        }
+    }
+
+    public class SubEquation : Equation
 	{
         public SubEquation()
         {

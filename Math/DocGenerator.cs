@@ -16,14 +16,16 @@ namespace Math
 			this._equations = equations.ToList();
 		}
 
-		public void Run()
+		public void Run(int lineHight)
 		{
 			XWPFParagraph head = this._doc.CreateParagraph();
 
 			string line = string.Empty;
-			for (int i = 0; i < this._equations.Count + 1; i++)
+            int count = this._equations.Count;
+
+            for (int i = 0; i < count + 1; i++)
 			{
-				if (i != 0 && i % 3 == 0 && i != 60)
+				if (i != 0 && i % 3 == 0 && i != count)
 				{
 					XWPFParagraph p1 = this._doc.CreateParagraph();
 					XWPFRun r1 = p1.CreateRun();
@@ -31,10 +33,19 @@ namespace Math
 					r1.SetTextPosition(10);
 					r1.SetFontFamily("Arial", FontCharRange.HAnsi);
                     r1.FontSize = 18;
-                
+                    if(lineHight>0 )
+                    {
+                        for (int k = 0; k <=lineHight; k++)
+                        {
+                            XWPFParagraph empty = this._doc.CreateParagraph();
+                            XWPFRun emptyLine = empty.CreateRun();
+                            emptyLine.SetText("   ");
+                            emptyLine.SetTextPosition(10);
+                        }
+                    }
 					line = string.Empty;
 				}
-				if (i != 60)
+				if (i != count)
 				{
 					line = line + this._equations[i].Print() + "                  ";
 				}
@@ -43,8 +54,9 @@ namespace Math
 					XWPFParagraph p1 = this._doc.CreateParagraph();
 					XWPFRun r1 = p1.CreateRun();
 					r1.SetText(line);
-					r1.SetTextPosition(10);
-					r1.SetFontFamily("Arial", FontCharRange.HAnsi);
+					r1.SetTextPosition(10);     
+
+                    r1.SetFontFamily("Arial", FontCharRange.HAnsi);
                     r1.FontSize = 18;
 				}
 			}

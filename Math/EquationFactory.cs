@@ -29,6 +29,14 @@ namespace Math
             }
         }
 
+        public EquationFactory(int num)
+        {
+            for (int i = 0; i < num; i++)
+            {
+                this._equations.Add(this.CreateUniqueEquation<MultiplayEquationWith3m2>());
+            }
+        }
+
         public List<Equation> Equations
         {
             get { return this._equations; }
