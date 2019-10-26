@@ -32,7 +32,7 @@ namespace Math
 					r1.SetText(line);
 					r1.SetTextPosition(10);
 					r1.SetFontFamily("Arial", FontCharRange.HAnsi);
-                    r1.FontSize = 18;
+                    r1.FontSize = 12;
                     if(lineHight>0 )
                     {
                         for (int k = 0; k <=lineHight; k++)
@@ -47,7 +47,7 @@ namespace Math
 				}
 				if (i != count)
 				{
-					line = line + this._equations[i].Print() + "                  ";
+					line = line + string.Format("{0}) ",i+1)+this._equations[i].Print() + "                                  ";
 				}
 				else
 				{
@@ -57,7 +57,7 @@ namespace Math
 					r1.SetTextPosition(10);     
 
                     r1.SetFontFamily("Arial", FontCharRange.HAnsi);
-                    r1.FontSize = 18;
+                    r1.FontSize = 12;
 				}
 			}
 			string fileName = DateTime.Now.ToShortDateString().Replace("/", "_")+(new Random()).Next().ToString();
