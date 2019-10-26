@@ -17,10 +17,27 @@ namespace Math
 			List<Equation> equations = new List<Equation>();
 			for (int i = 0; i < 15; i++)
 			{
-				equations.Add(new PlusEquation());
-				equations.Add(new MultiplayEquation());
-				equations.Add(new SubEquation());
-				equations.Add(new DivdeEquation());
+                Equation equation = new PlusEquation();
+                if(!equations.Contains(equation))
+                {
+                    equations.Add(equation);
+                }
+                equation = new MultiplayEquation();
+                if (!equations.Contains(equation))
+                {
+                    equations.Add(equation);
+                }
+
+                equation = new SubEquation();
+                if (!equations.Contains(equation))
+                {
+                    equations.Add(equation);
+                }
+                equation = new DivdeEquation();
+                if (!equations.Contains(equation))
+                {
+                    equations.Add(equation);
+                }
 			}
 
 			DocGenerator docGenerator = new DocGenerator(equations.OrderBy(x => x.Operator).ToList());

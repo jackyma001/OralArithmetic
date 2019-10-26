@@ -28,7 +28,7 @@
 
 		public override bool Equals(object obj)
 		{
-			return base.Equals(obj);
+            return this.Print() == ((Equation)obj).Print();
 		}
 	}
 

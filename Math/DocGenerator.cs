@@ -48,7 +48,7 @@ namespace Math
                     r1.FontSize = 18;
 				}
 			}
-			string fileName = DateTime.Now.ToShortDateString().Replace("/", "_");
+			string fileName = DateTime.Now.ToShortDateString().Replace("/", "_")+(new Random()).Next().ToString();
 			string fullPath = string.Format("c:\\test\\{0}.docx", fileName);
 			FileStream out1 = new FileStream(fullPath, FileMode.Create);
 			this._doc.Write(out1);
