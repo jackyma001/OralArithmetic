@@ -19,8 +19,10 @@ namespace Math
 		public void Run(int lineHight)
 		{
 			XWPFParagraph head = this._doc.CreateParagraph();
+            XWPFParagraph firstLine = this._doc.CreateParagraph();
+            XWPFRun firtRow = firstLine.CreateRun();
 
-			string line = string.Empty;
+            string line = string.Empty;
             int count = this._equations.Count;
 
             for (int i = 0; i < count + 1; i++)
@@ -47,7 +49,7 @@ namespace Math
 				}
 				if (i != count)
 				{
-					line = line + string.Format("{0}) ",i+1)+this._equations[i].Print() + "                                  ";
+					line = line + string.Format("{0}) ",i+1)+this._equations[i].Print() + "                             ";
 				}
 				else
 				{

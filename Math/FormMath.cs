@@ -23,7 +23,7 @@ namespace Math
         {
             EquationFactory factory = new EquationFactory(int.Parse(txtShushi.Text));
             DocGenerator docGenerator = new DocGenerator(factory.Equations);
-            docGenerator.Run(3);
+            docGenerator.Run(4);
         }
     }
 }
