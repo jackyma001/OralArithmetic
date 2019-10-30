@@ -34,12 +34,14 @@
             this.btnOk = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.txtShushi = new System.Windows.Forms.TextBox();
+            this.txtCopies = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtTotal
             // 
             this.txtTotal.AcceptsReturn = true;
-            this.txtTotal.Location = new System.Drawing.Point(62, 28);
+            this.txtTotal.Location = new System.Drawing.Point(85, 28);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.Size = new System.Drawing.Size(100, 21);
             this.txtTotal.TabIndex = 2;
@@ -57,11 +59,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 28);
+            this.label2.Location = new System.Drawing.Point(12, 69);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 12);
+            this.label2.Size = new System.Drawing.Size(53, 12);
             this.label2.TabIndex = 1;
-            this.label2.Text = "题目数";
+            this.label2.Text = "打印份数";
             // 
             // btnOk
             // 
@@ -86,11 +88,29 @@
             // txtShushi
             // 
             this.txtShushi.AcceptsReturn = true;
-            this.txtShushi.Location = new System.Drawing.Point(208, 28);
+            this.txtShushi.Location = new System.Drawing.Point(246, 99);
             this.txtShushi.Name = "txtShushi";
             this.txtShushi.Size = new System.Drawing.Size(100, 21);
             this.txtShushi.TabIndex = 2;
             this.txtShushi.Text = "35";
+            // 
+            // txtCopies
+            // 
+            this.txtCopies.AcceptsReturn = true;
+            this.txtCopies.Location = new System.Drawing.Point(85, 66);
+            this.txtCopies.Name = "txtCopies";
+            this.txtCopies.Size = new System.Drawing.Size(100, 21);
+            this.txtCopies.TabIndex = 2;
+            this.txtCopies.Text = "1";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(186, 102);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(41, 12);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "题目数";
             // 
             // FormMath
             // 
@@ -100,8 +120,10 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnOk);
             this.Controls.Add(this.label2);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtShushi);
+            this.Controls.Add(this.txtCopies);
             this.Controls.Add(this.txtTotal);
             this.Name = "FormMath";
             this.ResumeLayout(false);
@@ -117,6 +139,8 @@
 		private System.Windows.Forms.Button btnOk;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox txtShushi;
+        private System.Windows.Forms.TextBox txtCopies;
+        private System.Windows.Forms.Label label3;
     }
 }
 

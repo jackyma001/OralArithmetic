@@ -16,7 +16,7 @@ namespace Math
 			this._equations = equations.ToList();
 		}
 
-		public void Run(int lineHight)
+		public string Run(int lineHight)
 		{
 			XWPFParagraph head = this._doc.CreateParagraph();
             XWPFParagraph firstLine = this._doc.CreateParagraph();
@@ -67,7 +67,8 @@ namespace Math
 			FileStream out1 = new FileStream(fullPath, FileMode.Create);
 			this._doc.Write(out1);
 			out1.Close();
-			Process.Start(fullPath);
+            return fullPath;
+			//Process.Start(fullPath);
 		}
 	}
 }
