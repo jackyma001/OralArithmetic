@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -40,7 +41,8 @@ namespace Math
             WordPrintHelper printer = new WordPrintHelper();
             EquationFactory factory = new EquationFactory(int.Parse(txtShushi.Text));
             DocGenerator docGenerator = new DocGenerator(factory.Equations);
-            printer.Printword(docGenerator.Run(4),"");
+            Process.Start(docGenerator.Run(4));
+            //printer.Printword(docGenerator.Run(4),"");
         }
     }
 }

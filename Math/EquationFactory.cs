@@ -33,7 +33,7 @@ namespace Math
         {
             for (int i = 0; i < num; i++)
             {
-                this._equations.Add(this.CreateUniqueEquation<MultiplayEquationWith3m2>());
+                this._equations.Add(this.CreateUniqueEquation<DivdeEquationWith3d2>());
             }
         }
 

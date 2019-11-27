@@ -94,7 +94,31 @@
         }
     }
 
-    public class SubEquation : Equation
+    public class DivdeEquationWith3d2 : Equation
+    {
+        public DivdeEquationWith3d2()
+        {
+            int a = MyRandom.Next(22, 999);
+            int b = MyRandom.Next(10, 99);
+            while ( a / b < 10)
+            {
+                a = MyRandom.Next(22, 999);
+                b = MyRandom.Next(10, 99);
+            }
+            this.Item1 = a;
+            this.Item2 = b;
+        }
+
+        public override string Operator
+        {
+            get
+            {
+                return "÷";
+            }
+        }
+    }
+
+        public class SubEquation : Equation
 	{
         public SubEquation()
         {
