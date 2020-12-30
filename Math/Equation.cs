@@ -35,7 +35,7 @@
         }
 		public string Print()
         {
-            return string.Format(Equation.Formater, this.Item1, this.Operator, this.Item2);
+            return $"{this.Item1}{this.Operator}{this.Item2}=";
         }
             
 
@@ -144,12 +144,12 @@
 	{
         public DivdeEquation()
         {
-            int a = MyRandom.Next(22, 1000);
-            int b = MyRandom.Next(2, 10);
+            int a = MyRandom.Next(10000, 99999);
+            int b = MyRandom.Next(11, 99);
             while (a % b != 0 || a / b < 10)
             {
-                a = MyRandom.Next(22, 1000);
-                b = MyRandom.Next(2, 10);
+                a = MyRandom.Next(10000, 999999);
+                b = MyRandom.Next(11, 99);
             }
             this.Item1 = a;
             this.Item2 = b;
